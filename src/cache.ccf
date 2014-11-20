@@ -1,0 +1,18 @@
+# Definicion de la region cache para FrameworkCache
+
+
+#------Configuracion mas basica de la memoria cache donde cada region de toma los valores por default-------
+
+jcs.region.FrameworkCache=DC
+jcs.region.FrameworkCache.cacheattributes=org.apache.jcs.engine.CompositeCacheAttributes
+jcs.region.FrameworkCache.cacheattributes.MaxObjects=1000
+jcs.region.FrameworkCache.cacheattributes.MemoryCacheName=org.apache.jcs.engine.memory.lru.LRUMemoryCache
+
+#------Estas lineas son para agregar el reductor de memoria---------
+
+jcs.region.FrameworkCache.cacheattributes.ShrinkerIntervalSeconds=60
+jcs.region.FrameworkCache.cacheattributes.MaxSpoolPerRun=500
+jcs.region.FrameworkCache.elementattributes=org.apache.jcs.engine.ElementAttributes
+jcs.region.FrameworkCache.elementattributes.IsEternal=false
+jcs.region.FrameworkCache.cacheattributes.UseMemoryShrinker=true
+jcs.region.FrameworkCache.cacheattributes.MaxMemoryIdleTimeSeconds=3600
