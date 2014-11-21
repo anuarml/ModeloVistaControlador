@@ -59,8 +59,8 @@ public class AdminVotos extends Modelo {
 
     public void agregarCandidatos(ArrayList<Candidato> candidatos) {
         
-        for (int  i= 0 ; i < candidatos.size(); i++) {
-            
+        for (Candidato candidato:candidatos) {
+            llamarCache(candidato);
         }
         super.setDatos(candidatos);
         notificarObservadoresEvento(0);
