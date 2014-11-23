@@ -7,9 +7,14 @@ package Modelo;
  */
 
 /**
- *
+ * Interface que representa un observador.
  * @author a09001005
  */
 public interface Observer {
+    
+    /**
+     * Método para actualizar la información recibida de un objeto.
+     * @param o el objeto con la información a actualizar.
+     */
     public void actualizar(Object o);
 }

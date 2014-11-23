@@ -7,7 +7,8 @@
 package Modelo;
 
 /**
- *
+ * Una enumeración con los identificadores de los eventos que pueden ser manejados
+ * por el sistema.
  * @author vaio
  */
 public enum idEventos {

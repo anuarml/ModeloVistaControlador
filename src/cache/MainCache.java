@@ -12,12 +12,16 @@ import org.apache.jcs.access.exception.CacheException;
 import org.apache.jcs.access.exception.ObjectExistsException;
 
 /**
- *
+ * Clase encargada del manejo del caché.
  * @author Anuar
  */
 public class MainCache {
     private JCS jcsCache;
     
+    /**
+     * Constructor por defecto. Inicializa el objeto con una instancia de
+     * la cache.
+     */
     public MainCache() {
 
         try {
@@ -30,13 +34,23 @@ public class MainCache {
 
     }
     
+    /**
+     * Método para agregar un objeto a la caché.
+     * @param dato el objeto a agregar.
+     * @throws ObjectExistsException si el objeto ya se encuentra en la caché.
+     * @throws CacheException si ocurre un problema al intentar agregar a la cahé.
+     */
     public void putInCache(Cacheable dato)throws ObjectExistsException,CacheException{ 
         //Aqui en el primer datosCandidato va a ir por ejemplo datosCandidato.getId(), o sea el identificador con el cual se va a guardar ese objeto
         jcsCache.putSafe(dato.getId(), dato);
     }
-
-    //Aqui en object va a ir el tipo de objeto que se va a guardar    
-    public Cacheable getProductById(int id) {
+  
+    /**
+     * Método para retirar un objeto de la caché.
+     * @param id el identificador del objeto a retirar.
+     * @return el objeto correspondiente al id.
+     */
+    public Cacheable getById(int id) {
           return (Cacheable) jcsCache.get(id);
     }
     

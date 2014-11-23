@@ -9,65 +9,85 @@ package Modelo;
 import java.util.ArrayList;
 
 /**
- *
+ * Clase que representa un evento que puede ocurrir durante la ejecución del
+ * programa
  * @author vaio
  */
 public class Evento {
+
     protected ArrayList<Observer> miembros;
     protected int idEvento;
     protected String nombreEvento;
 
+    /**
+     * Constructor por defecto. Inicializa el objeto con un entero que representa
+     * el identificador de un evento.
+     * @param idEvento el identificador del evento.
+     */
     public Evento(int idEvento) {
         this.miembros=new ArrayList();
         this.idEvento=idEvento;
     }
     
 
+    /**
+     * Método que agrega un observador al arreglo de miembros.
+     * @param miembro el observador a agregar.
+     */
     public void agregarMiembro(Observer miembro){
         miembros.add(miembro);
     }
     
+    /**
+     * Método que elimina un observador miembro del arreglo de miembros.
+     * @param miembro el observador a eliminar.
+     */
     public void eliminarMiembro(Observer miembro){
         miembros.remove(miembro);
     }
     
-    /**
-     * @return the miembros
+    /** Método para obtener todos los observadores.
+     * @return los miembros.
      */
     public ArrayList<Observer> getMiembros() {
         return miembros;
     }
 
     /**
-     * @return the idEvento
+     * Método para obtener el identificador de un evento.
+     * @return el idEvento
      */
     public int getIdEvento() {
         return idEvento;
     }
 
     /**
-     * @param miembros the miembros to set
+     * Método para agregar elementos a la lista de observadores
+     * @param miembros los miembros a agregar.
      */
     public void setMiembros(ArrayList<Observer> miembros) {
         this.miembros = miembros;
     }
 
     /**
-     * @param idEvento the idEvento to set
+     * Método para asignar el identificador de un evento.
+     * @param idEvento el idEvento a asignar.
      */
     public void setIdEvento(int idEvento) {
         this.idEvento = idEvento;
     }
 
     /**
-     * @return the nombreEvento
+     * Método para obtener el nombre de une evento.
+     * @return el nombreEvento.
      */
     public String getNombreEvento() {
         return nombreEvento;
     }
 
     /**
-     * @param nombreEvento the nombreEvento to set
+     * Método para asignar el nombre de un evento.
+     * @param nombreEvento el nombre del evento a asignar.
      */
     public void setNombreEvento(String nombreEvento) {
         this.nombreEvento = nombreEvento;
